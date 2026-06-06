@@ -1,0 +1,4 @@
+# Only publish the guide HTML
+*
+!index.html
+!.gitignore
