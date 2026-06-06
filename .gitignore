@@ -2,3 +2,5 @@
 *
 !index.html
 !.gitignore
+!.nojekyll
+!ship.sh
