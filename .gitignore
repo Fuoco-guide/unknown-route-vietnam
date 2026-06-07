@@ -1,6 +1,8 @@
-# Only publish the guide HTML
+# Only publish the guide and images
 *
 !index.html
 !.gitignore
 !.nojekyll
 !ship.sh
+!img/
+!img/*.webp
