@@ -1,8 +1,12 @@
-# Only publish the guide and images
+# Only publish guide, images and PWA files
 *
 !index.html
 !.gitignore
 !.nojekyll
 !ship.sh
+!manifest.json
+!sw.js
+!img-list.json
 !img/
 !img/*.webp
+!img/*.png
