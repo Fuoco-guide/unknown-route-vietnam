@@ -1,4 +1,4 @@
-const CACHE = 'tur-vietnam-v2';
+const CACHE = 'tur-vietnam-v3';
 const BASE = '/unknown-route-vietnam';
 
 self.addEventListener('install', e => {
