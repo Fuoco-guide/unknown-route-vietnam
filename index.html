@@ -157,6 +157,17 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (window.Babel && typeof window.Babel.transformScriptTags === 'function') {
       window.Babel.transformScriptTags();
     }
+    setTimeout(function() {
+      var d = document.createElement('div');
+      d.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:9999;background:#fff;border-radius:100px;padding:10px 18px;box-shadow:0 4px 20px rgba(0,0,0,.18);font:13px/1 -apple-system,sans-serif;display:flex;align-items:center;gap:12px';
+      d.innerHTML = '<span style="color:#999;font-size:11px;text-transform:uppercase;letter-spacing:.05em">Nav size</span><button id="__sm" style="width:28px;height:28px;border-radius:50%;border:1px solid #ddd;background:none;cursor:pointer;font-size:18px">−</button><span id="__sv" style="min-width:44px;text-align:center;font-weight:700">80%</span><button id="__sp" style="width:28px;height:28px;border-radius:50%;border:1px solid #ddd;background:none;cursor:pointer;font-size:18px">+</button>';
+      document.body.appendChild(d);
+      var z = 0.8;
+      function upd() { document.querySelectorAll('.cnav').forEach(function(n){n.style.zoom=z;}); document.getElementById('__sv').textContent=Math.round(z*100)+'%'; }
+      upd();
+      document.getElementById('__sm').onclick = function(){ z=Math.max(0.5,Math.round((z-0.05)*100)/100); upd(); };
+      document.getElementById('__sp').onclick = function(){ z=Math.min(1.5,Math.round((z+0.05)*100)/100); upd(); };
+    }, 1500);
 
   } catch (err) {
     setStatus('Error unpacking: ' + err.message);
